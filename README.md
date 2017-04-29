@@ -22,14 +22,14 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
-- Change currency and rate equivalent
+- Change currency and rate equivalent.
 - Change percent.
 
 ## Notes
 
 Describe any challenges encountered while building the app.
-- UI
-- Change currency
+- UI.
+- Change currency and rate equivalent.
 
 ## License
 
