@@ -29,22 +29,6 @@ class CaculatorViewController: UIViewController, UITextFieldDelegate {
     var tip = 0.0
     var currentCurrency = ""
     
-    override func viewDidAppear(_ animated: Bool) {
-        buttonLowPercent.setTitle("\(Int(Global.percentLow * 100))%", for: .normal)
-        print(Global.percentLow * 100)
-        buttonMediumPercent.setTitle("\(Int(Global.percentMedium * 100))%", for: .normal)
-        buttonHighPercent.setTitle("\(Int(Global.percentHigh * 100))%", for: .normal)
-        
-        buttonCurrency1.setTitle("\(Global.currency1)", for: .normal)
-        buttonCurrency2.setTitle("\(Global.currency2)", for: .normal)
-        buttonCurrency3.setTitle("\(Global.currency3)", for: .normal)
-        
-        currentPercent = Global.currentPercent
-        currentRate = Global.currentRate
-        billAmount = billAmount / Global.oldRate
-        caculateBillAmount(billAmount: billAmount)
-        changeCurrency()
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,8 +51,24 @@ class CaculatorViewController: UIViewController, UITextFieldDelegate {
         
         caculateBillAmount(billAmount: billAmount)
         changeCurrency()
+                       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        buttonLowPercent.setTitle("\(Int(Global.percentLow * 100))%", for: .normal)
+        print(Global.percentLow * 100)
+        buttonMediumPercent.setTitle("\(Int(Global.percentMedium * 100))%", for: .normal)
+        buttonHighPercent.setTitle("\(Int(Global.percentHigh * 100))%", for: .normal)
         
-                // Do any additional setup after loading the view.
+        buttonCurrency1.setTitle("\(Global.currency1)", for: .normal)
+        buttonCurrency2.setTitle("\(Global.currency2)", for: .normal)
+        buttonCurrency3.setTitle("\(Global.currency3)", for: .normal)
+        
+        currentPercent = Global.currentPercent
+        currentRate = Global.currentRate
+        billAmount = billAmount / Global.oldRate
+        caculateBillAmount(billAmount: billAmount)
+        changeCurrency()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
