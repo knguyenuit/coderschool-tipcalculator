@@ -23,7 +23,7 @@ class CaculatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonCurrency3: UIButton!
     
     var currentPercent = 0.0
-    var currentRate = 0.0
+    var currentRate = 1.0
     var totalBill = 0.0
     var billAmount = 0.0
     var tip = 0.0
@@ -88,6 +88,8 @@ class CaculatorViewController: UIViewController, UITextFieldDelegate {
     }
     
     func changeCurrency(){
+        billAmount = billAmount / currentRate;
+        
         if currentCurrency == Global.currency1{
             currentRate = Global.rateCurrency1
         }
